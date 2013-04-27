@@ -1,0 +1,33 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:control="clr-namespace:SL_SearchBox.SearchBox"
+             x:Class="SL_SearchBox.MainPage"
+             d:DesignHeight="300"
+             d:DesignWidth="400" mc:Ignorable="d">
+
+	<UserControl.Resources>
+		
+		
+		
+	</UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot"
+          Background="White">
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <TextBox Name="TextBox1"
+                     Width="300"/>
+            <control:SearchBox x:Name="MySearchBox"
+                               Watermark="what ya' looking for?"
+                               ClearSearchButtonContent="X"
+                               Text="{Binding Text, ElementName=TextBox1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                               Margin="10"
+                               Width="300">
+                <control:SearchBox.SearchButtonContent>
+                    <Image Source="{StaticResource SearchIcon}"/>
+                </control:SearchBox.SearchButtonContent>
+            </control:SearchBox>
+        </StackPanel>
+    </Grid>
+</UserControl>
